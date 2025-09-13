@@ -2,6 +2,7 @@
 <% @books.each do |book| %>
   <%= book.body %>
   <%= book.title %>
+  <%= link_to "Destroy", book_path(book.id), method: :delete, data: { confirm: "Are you sure?" } %>
 <% end %>
 <%= form_with model: @book, url:books_path, method: :post  do |f| %>
 <h4>Title</h4>
