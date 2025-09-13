@@ -15,7 +15,6 @@ class BooksController < ApplicationController
       redirect_to book_path(@book.id)
     else
       @books = Book.all
-      flash.now[:alert] = "book was not created"
       render :index
     end
   end
@@ -30,7 +29,6 @@ class BooksController < ApplicationController
       flash[:notice] = "Book was successfully edited."
       redirect_to book_path(@book.id)
     else
-      flash.now[:alert] = "book was not edited"
       render :edit
     end
   end
@@ -41,7 +39,6 @@ class BooksController < ApplicationController
       flash[:notice] = "Book was successfully destroyed."
       redirect_to books_path
     else
-      flash.now[:alert] = "book was not destroyed"
       render :index
     end
   end
